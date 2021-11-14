@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 def sort(elem):
     return elem[1]
@@ -7,7 +8,7 @@ def sort(elem):
 notes = ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
 
 # Load tabs
-tabs = open("TabExample.txt", "r").readlines()
+tabs = sys.stdin.readlines()
 
 # collecting of significant frets
 tuples = []
@@ -28,4 +29,4 @@ for tap in tuples:
     noteNum = tap[0] % 12
     result = result + notes[noteNum] + ", "
 
-print(result[:-2])
+sys.stdout.write(result[:-2] + "\n")
